@@ -158,7 +158,15 @@ VALUES
 ALTER TABLE item
 ADD item_price DECIMAL(10, 2);
 
+DELETE FROM public.heroitem
+WHERE hero_id = 1;
+
 UPDATE public.hero
 SET is_active = false
 WHERE hero_id = 1;
+
+SELECT hero.hero_name
+FROM hero
+INNER JOIN class ON hero.class_id = class.class_id
+WHERE class.class_name LIKE %Archers%;
 
