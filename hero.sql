@@ -157,3 +157,11 @@ VALUES
 
 ALTER TABLE item
 ADD item_price DECIMAL(10, 2);
+
+DELETE FROM public.heroitem
+WHERE hero_id = 1;
+
+SELECT p.player_name, h.hero_name
+FROM public.player AS p
+JOIN public.hero AS h ON p.hero_id = h.hero_id
+WHERE h.is_active = true;
